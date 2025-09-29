@@ -15,6 +15,17 @@ The goal of KUDAA is to build a simple, interactive fintech-inspired web applica
 
 ---
 
+## Kuda UI
+
+The UI for this project is in the assests/images/kudaa-ui
+HTML and CSS developers should utilize this image for guidiance
+
+## Kudaa Logo
+
+The logo for this project is in the assests/images/kudaa-logo
+
+---
+
 ## Project colors
 
 Grey Color
