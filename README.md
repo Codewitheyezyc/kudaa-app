@@ -119,3 +119,15 @@ We follow a professional Git branching strategy.
 
 This project is proudly developed by the Creed Tech community.
 Our mission is to build, innovate, and grow together as developers by working on real-world projects.
+
+## Javascript developers
+
+There is a javascript file called **data.js** this file contains data that will be used in this application
+
+**Things to be created**
+
+1. Create a username for every account owner.
+2. create the balance of every user.
+
+Also calculate the interest of every account holder:
+1.If balance is below 50000, no interest. 2. If balance is between 50000 and 75000 interest rate 0.5. 3. If balance is 100000 interest is 1. 4. If balance is 200000 and above 2.
