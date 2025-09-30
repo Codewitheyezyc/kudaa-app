@@ -12,7 +12,7 @@ This document outlines the process and guidelines to make contributing easy and 
    ```
 3. Create a new branch
    git checkout -b feature/your-feature-name
-4. Make your chnages and commit
+4. Make your changes and commit
    git commit -m "Add: new feature X"
 5. Push your branch
    git push origin feature/your-feature-name
