@@ -7,26 +7,22 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <section class="heading">
-      <div class="login-header">
-        <img src="assets/images/kudaa-logo/main.png" alt="" />
+    <div class="heading">
+      <img src="assets/images/kudaa-logo/main.png" alt="" />
 
-        <div class="login-header-button">
-          <a href="#">USERNAME</a>
-          <a href="#">PIN</a>
-          <a href="#">&#8594;</a>
-        </div>
-      </div>
+      <input type="text" placeholder="USERNAME" class="heading__input--primary">
+      <input type="text" placeholder="PIN" class="heading__input--secondary">
+      <button class="heading__btn--login">&rarr;</button>
+    </div>
 
-      <h1 class="login-title">KUDAA APP</h1>
-
-      <form class="login-form">
-        <input type="text" placeholder="Username" class="username login" />
-        <input type="password" placeholder="PIN" class="pin login" />
-
-        <button class="login-button">LOGIN</button>
+    <div class="form">
+      <h1 class="form__title">KUDAA BANK</h1>
+      <form class="form__login">
+        <input type="text" placeholder="USERNAME" class="form__input--primary">
+        <input type="text" placeholder="PIN" class="form__input--secondary">
+        <button class="form__btn--first">LOGIN</button>
       </form>
-    </section>
+    </div>
 
     <script src="script.js"></script>
   </body>
