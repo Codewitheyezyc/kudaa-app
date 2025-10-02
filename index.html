@@ -44,13 +44,19 @@
       </form>
     </div>
 
-    <!-- ACTION --- LOAN -->
-    <div class="action action--loan">
-      <h2>Request loan</h2>
-      <form class="info info--loan">
-        <input type="number" class="info__input info__input--loan-amount" />
-        <button class="info__btn info__btn--loan">&rarr;</button>
-        <label class="info__label info__label--loan">Amount</label>
+    <!-- ACTION --- ADD MONEY -->
+    <div class="action action--add">
+      <h2>Add money</h2>
+      <form class="info info--add">
+        <input type="number" class="info__input info__input--add-amount" />
+        <input
+          type="password"
+          maxlength="4"
+          class="info__input info__input--pin"
+        />
+        <button class="info__btn info__btn--add">&rarr;</button>
+        <label class="info__label info__label--add">Amount</label>
+        <label class="info__label info__label--add">Confirm PIN</label>
       </form>
     </div>
 
