@@ -10,18 +10,69 @@
     <div class="heading">
       <img src="assets/images/kudaa-logo/main.png" alt="" />
 
-      <input type="text" placeholder="USERNAME" class="heading__input--primary">
-      <input type="text" placeholder="PIN" class="heading__input--secondary">
+      <input
+        type="text"
+        placeholder="USERNAME"
+        class="heading__input--primary"
+      />
+      <input type="text" placeholder="PIN" class="heading__input--secondary" />
       <button class="heading__btn--login">&rarr;</button>
     </div>
 
     <div class="form">
       <h1 class="form__title">KUDAA BANK</h1>
       <form class="form__login">
-        <input type="text" placeholder="USERNAME" class="form__input--primary">
-        <input type="text" placeholder="PIN" class="form__input--secondary">
+        <input
+          type="text"
+          placeholder="USERNAME"
+          class="form__input--primary"
+        />
+        <input type="text" placeholder="PIN" class="form__input--secondary" />
         <button class="form__btn--first">LOGIN</button>
       </form>
+    </div>
+
+    <!-- ACTION --- TRANSFERS -->
+    <div class="action action--transfer">
+      <h2>Transfer money</h2>
+      <form class="info info--transfer">
+        <input type="text" class="info__input info__input--to" />
+        <input type="number" class="info__input info__input--amount" />
+        <button class="info__btn info__btn--transfer">&rarr;</button>
+        <label class="info__label">Transfer to</label>
+        <label class="info__label">Amount</label>
+      </form>
+    </div>
+
+    <!-- ACTION --- ADD MONEY -->
+    <div class="action action--add">
+      <h2>Add money</h2>
+      <form class="info info--add">
+        <input type="number" class="info__input info__input--add-amount" />
+        <input
+          type="password"
+          maxlength="4"
+          class="info__input info__input--pin"
+        />
+        <button class="info__btn info__btn--add">&rarr;</button>
+        <label class="info__label info__label--add">Amount</label>
+        <label class="info__label info__label--add">Confirm PIN</label>
+      </form>
+    </div>
+
+    <!-- ACTION --- CLOSE -->
+    <div class="action action--close">
+      <h2>Close account</h2>
+      <form class="info info--close">
+        <input type="text" class="info__input info__input--user" />
+        <input
+          type="password"
+          maxlength="4"
+          class="info__input info__input--pin"
+        />
+        <button class="info__btn info__btn--close">&rarr;</button>
+        <label class="info__label">Confirm user</label>
+        <label class="info__label">Confirm PIN</label>
     </div>
 
     <script src="script.js"></script>
