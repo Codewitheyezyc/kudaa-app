@@ -12,22 +12,9 @@
       <!-- APP -->
       <div class="app">
         <!-- HEADER -->
-        <header class="header">
-          <img src="assets/images/kudaa-logo/main.png" alt="">
-          <input type="text" class="header__input" placeholder="USERNAME" />
-          <input type="text" class="header__input" placeholder="PIN" />
-          <button class="header__button">&rarr;</button>
-        </header>
+        <header class="header"></header>
         <!-- HERO -->
-        <div class="hero">
-          <h1 class="hero__title">KUDAA APP</h1>
-
-          <form class="hero__form">
-            <input type="text" class="hero__input" placeholder="USERNAME" />
-            <input type="text" class="hero__input" placeholder="PIN" />
-            <button class="hero__button">LOGIN</button>
-          </form>
-        </div>
+        <div class="hero"></div>
         <!-- DASHBOARD -->
         <div class="dashboard">
           <!-- WELCOME MESSAGE -->
@@ -35,8 +22,17 @@
 
           <!-- ACCOUNTS -->
           <div class="dashboard__account">
-            <div class="dashboard__amount"></div>
-            <form class="dashboard__close"></form>
+            <div class="dashboard__amount">
+              <p class="dashboard__account-number">Naira Account - 1122334455</p>
+              <p class="dashboard__balance">₦100,000</p>
+              <p class="dashboard__last-updated">Last updated 1hr ago</p>
+            </div>
+            <form class="dashboard__close">
+              <h3>Close Account</h3>
+              <input type="text" placeholder="Username" class="dashboard__input dashboard__username">
+              <input type="password" placeholder="Password" class="dashboard__input dashboard__password">
+              &rarr;
+            </form>
           </div>
 
           <!-- FORMS -->
