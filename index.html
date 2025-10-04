@@ -13,7 +13,7 @@
       <div class="app">
         <!-- HEADER -->
         <header class="header">
-          <img src="assets/images/kudaa-logo/main.png" alt="">
+          <img src="assets/images/kudaa-logo/main.png" alt="" />
           <input type="text" class="header__input" placeholder="USERNAME" />
           <input type="text" class="header__input" placeholder="PIN" />
           <button class="header__button">&rarr;</button>
@@ -35,14 +35,75 @@
 
           <!-- ACCOUNTS -->
           <div class="dashboard__account">
-            <div class="dashboard__amount"></div>
-            <form class="dashboard__close"></form>
+            <div class="dashboard__amount">
+              <!-- BALANCE -->
+              <div class="balance">
+                <div>
+                  <p class="balance__label">Current balance</p>
+                  <p class="balance__date">
+                    As of <span class="date">05/03/2037</span>
+                  </p>
+                </div>
+                <p class="balance__value">N1000</p>
+              </div>
+            </div>
+            <form class="dashboard__close">
+              <!-- ACTION: CLOSE -->
+              <div class="action action--close">
+                <h2>Close account</h2>
+                <form class="info info--close">
+                  <input type="text" class="info__input info__input--user" />
+                  <input
+                    type="password"
+                    maxlength="6"
+                    class="info__input info__input--pin"
+                  />
+                  <button class="info__btn info__btn--close">&rarr;</button>
+                  <label class="info__label">Confirm user</label>
+                  <label class="info__label">Confirm PIN</label>
+                </form>
+              </div>
+            </form>
           </div>
 
           <!-- FORMS -->
           <div class="dashboard__forms">
-            <form action="" class="dashboard__transfer"></form>
-            <form action="" class="dashboard__add"></form>
+            <form action="" class="dashboard__transfer">
+              <!-- ACTION: TRANSFERS -->
+              <div class="action action--transfer">
+                <h2>Transfer money</h2>
+                <form class="info info--transfer">
+                  <input type="text" class="info__input info__input--to" />
+                  <input
+                    type="number"
+                    class="info__input info__input--amount"
+                  />
+                  <button class="info__btn info__btn--transfer">&rarr;</button>
+                  <label class="info__label">Transfer to</label>
+                  <label class="info__label">Amount</label>
+                </form>
+              </div>
+            </form>
+            <form action="" class="dashboard__add">
+              <!-- ACTION: ADD MONEY -->
+              <div class="action action--add">
+                <h2>Add money</h2>
+                <form class="info info--add">
+                  <input
+                    type="number"
+                    class="info__input info__input--add-amount"
+                  />
+                  <input
+                    type="password"
+                    maxlength="6"
+                    class="info__input info__input--pin"
+                  />
+                  <button class="info__btn info__btn--add">&rarr;</button>
+                  <label class="info__label">Amount</label>
+                  <label class="info__label">Confirm PIN</label>
+                </form>
+              </div>
+            </form>
           </div>
         </div>
 
