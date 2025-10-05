@@ -41,7 +41,7 @@
             </div>
             <form class="dashboard__close">
               <h3>Close Account</h3>
-              <div class="dashboard__close-wrapper">
+              <div class="dashboard__close--wrapper">
               <input type="text" placeholder="Username" class="dashboard__input dashboard__username">
               <input type="password" placeholder="Password" class="dashboard__input dashboard__password">
               <span>&rarr;</span>
@@ -51,8 +51,18 @@
         </div>
           <!-- FORMS -->
           <div class="dashboard__forms">
-            <form action="" class="dashboard__transfer"></form>
-            <form action="" class="dashboard__add"></form>
+            <form action="" class="dashboard__transfer">
+              <h3 class="dashboard__title">Transfer</h3>
+              <input type="text" placeholder="Username" class="dashboard__input dashboard__recipient">
+              <input type="number" placeholder="Amount" class="dashboard__input dashboard__amount">
+              <span>&rarr;</span>
+            </form>
+            <form action="" class="dashboard__add">
+              <h3 class="dashboard__money-add">Add Money</h3>
+              <input type="number" placeholder="Amount" class="dashboard__input-add dashboard__amount">
+              <input type="text" placeholder="Pin" class="dashboard__input-add dashboard__pin">
+              <span>&rarr;</span>
+            </form>
           </div>
         </div>
 
