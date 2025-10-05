@@ -28,17 +28,26 @@
             <button class="hero__button">LOGIN</button>
           </form>
         </div>
-        <!-- DASHBOARD -->
         <div class="dashboard">
           <!-- WELCOME MESSAGE -->
           <h2 class="dashboard__welcome">Welcome Isaac</h2>
 
           <!-- ACCOUNTS -->
           <div class="dashboard__account">
-            <div class="dashboard__amount"></div>
-            <form class="dashboard__close"></form>
+            <div class="dashboard__amount">
+              <p class="dashboard__account-number">Naira Account - 1122334455</p>
+              <p class="dashboard__balance">₦100,000</p>
+              <p class="dashboard__last-updated">Last updated 1hr ago</p>
+            </div>
+            <form class="dashboard__close">
+              <h3>Close Account</h3>
+              <div class="dashboard__close--wrapper">
+              <input type="text" placeholder="Username" class="dashboard__input dashboard__username">
+              <input type="password" placeholder="Password" class="dashboard__input dashboard__password">
+              <span>&rarr;</span>
+              </div>
+            </form>
           </div>
-
           <!-- FORMS -->
           <div class="dashboard__forms">
             <form action="" class="dashboard__transfer"></form>
