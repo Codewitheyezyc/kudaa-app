@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>KUDAA | Our Finest Fintech App</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -12,24 +13,63 @@
       <!-- APP -->
       <div class="app">
         <!-- HEADER -->
-        <header class="header"></header>
-        <!-- HERO -->
-        <div class="hero"></div>
-        <!-- DASHBOARD -->
-        <div class="dashboard">
-          <!-- WELCOME MESSAGE -->
-          <h2 class="dashboard__welcome">Welcome Isaac</h2>
-
-          <!-- ACCOUNTS -->
-          <div class="dashboard__account">
-            <div class="dashboard__amount"></div>
-            <form class="dashboard__close"></form>
+        <header class="header">
+          <div class="header__image">
+            <img src="assets/images/kudaa-logo/main.png" alt="">
           </div>
+          <input type="text" class="header__input" placeholder="USERNAME" />
+          <input type="text" class="header__input" placeholder="PIN" />
+          <span><i class='bx bx-right-arrow-alt'></i></span>
+        </header>
+        <!-- HERO -->
+        <div class="hero">
+          <h1 class="hero__title">KUDAA APP</h1>
 
+          <form class="hero__form">
+            <input type="text" class="hero__input" placeholder="USERNAME" />
+            <input type="text" class="hero__input" placeholder="PIN" />
+            <button class="hero__button">LOGIN</button>
+          </form>
+        </div>
+        <!-- DASHBOARD  -->
+        <div class="dashboard">
+          <!-- WELCOME MESSAGE   -->
+           <h2 class="dashboard__welcome">Welcome Isaac</h2>
+          <!-- ACCOUNTs -->
+          <div class="dashboard__account">
+            <div class="dashboard__amount">
+              <p class="dashboard__account-number">Naira Account - 1122334455</p>
+              <p class="dashboard__balance">₦100,000</p>
+              <p class="dashboard__last-updated">Last updated 1hr ago</p>
+            </div>
+            <form class="dashboard__close">
+              <h3>Close Account</h3>
+              <div class="dashboard__close--wrapper">
+              <input type="text" placeholder="Username" class="dashboard__input dashboard__username">
+              <input type="password" placeholder="Password" class="dashboard__input dashboard__password">
+              <span>&rarr;</span>
+              </div>
+            </form>
+          </div>
+        </div>
           <!-- FORMS -->
           <div class="dashboard__forms">
-            <form action="" class="dashboard__transfer"></form>
-            <form action="" class="dashboard__add"></form>
+            <form action="" class="dashboard__transfer">
+              <p class="dashboard__title">Transfer</p>
+              <div class="dashboard__container">
+              <input type="text" placeholder="Username" class="dashboard__input dashboard__recipient">
+              <input type="number" placeholder="Amount" class="dashboard__input dashboard__amount">
+              <span>&rarr;</span>
+              </div>
+            </form>
+            <form action="" class="dashboard__add">
+              <p class="dashboard__money-add">Add Money</p>
+              <div class="dashboard__wrapper">
+              <input type="number" placeholder="Amount" class="dashboard__input-add dashboard__amount">
+              <input type="text" placeholder="Pin" class="dashboard__input-add dashboard__pin">
+              </div>
+              <span>&rarr;</span>
+            </form>
           </div>
         </div>
 
