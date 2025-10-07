@@ -52,29 +52,31 @@ body{
 }
 .dashboard__container input{
      padding: 1rem 2rem;
-    border-radius: 2rem;
+    border-radius: 4rem;
     width: 9rem;
-    height: 3rem;
-    font-size: 0.9rem;
+    font-size: 1rem;
     background-color: #ffffff;
     border: none;
     margin-left: 2rem;
 }
+.dashboard__forms{
+    height: 14rem;
+}
 .dashboard__title{
-   margin-left: 8rem;
+   margin-left: 10rem;
    padding: 0.7rem;
+   font-size: 1.3rem;
 }
 .dashboard__transfer{
     border: 1px solid black;
-    width: 27rem;
-    height: 8rem;
+    padding-right: 3rem;
     border-radius: 1rem;
     background-color: #ffbd59;
     border: none;
 }
 .dashboard__add input{
           padding: 1rem 2rem;
-          border-radius: 2rem;
+          border-radius: 4rem;
          width: 9rem;
          font-size: 1rem;
           background-color: #ffffff;
@@ -82,7 +84,7 @@ body{
            margin-left: 3rem; 
 }
 .dashboard__money-add{
-    margin-left: 8rem;
+    margin-left: 10rem;
    padding: 0.8rem;  
    font-size: 1.3rem;
 }
@@ -91,9 +93,14 @@ body{
     border-radius: 1rem;
     background-color: #00bf63;
     border: none;
+    padding-right: 3rem;
+    
 }
 .dashboard__forms{
     display: flex;
     gap: 2rem;
     padding: 3rem;
+}
+.dashboard__forms span{
+    font-size: 2rem;
 }
