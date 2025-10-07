@@ -96,10 +96,10 @@ We follow a professional Git branching strategy.
 
 4. git push origin feature/<task-name>
 
-5. Create a Pull Request (PR) on GitHub and wait for review.
+5. Create a Pull Request (PR) on GitHub targetting **development** and wait for review.
 
 - Go to GitHub → open the repository.
-- You will see a prompt to create a Pull Request (PR).
+- You will see a prompt to create a Pull Request (PR), change the base target to **development**.
 - Click it, write a short description of what you did.
 
 6. Wait for review

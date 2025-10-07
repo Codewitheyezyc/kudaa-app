@@ -47,3 +47,57 @@ html{
 /*  Login Section  */
 
 /*  Dashboard   */
+body{
+    font-family: var(--font-body) ;
+}
+.dashboard__container input{
+     padding: 1rem 2rem;
+    border-radius: 2rem;
+    width: 9rem;
+    height: 3rem;
+    font-size: 0.9rem;
+    background-color: #ffffff;
+    border: none;
+    margin-left: 2rem;
+    margin-bottom: ;
+
+    
+
+}
+.dashboard__title{
+   margin-left: 8rem;
+   padding: 0.7rem;
+}
+.dashboard__transfer{
+    border: 1px solid black;
+    width: 27rem;
+    height: 8rem;
+    border-radius: 1rem;
+    background-color: #ffbd59;
+    border: none;
+}
+.dashboard__add input{
+          padding: 1rem 2rem;
+          border-radius: 2rem;
+         width: 9rem;
+         font-size: 1rem;
+          background-color: #ffffff;
+          border: none;
+           margin-left: 3rem; 
+}
+.dashboard__money-add{
+    margin-left: 8rem;
+   padding: 0.8rem;  
+   font-size: 1.3rem;
+}
+.dashboard__add{
+     border: 1px solid black;
+    border-radius: 1rem;
+    background-color: #00bf63;
+    border: none;
+}
+.dashboard__forms{
+    display: flex;
+    gap: 2rem;
+    padding: 3rem;
+}
