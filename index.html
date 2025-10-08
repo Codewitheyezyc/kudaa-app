@@ -47,7 +47,7 @@
               <div class="dashboard__close--wrapper">
               <input type="text" placeholder="Username" class="dashboard__input dashboard__username">
               <input type="password" placeholder="Password" class="dashboard__input dashboard__password">
-              <span>&rarr;</span>
+              <span class="dashboard__close-arrow">&rarr;</span>
               </div>
             </form>
           </div>
@@ -57,17 +57,21 @@
             <form action="" class="dashboard__transfer">
               <p class="dashboard__title">Transfer</p>
               <div class="dashboard__container">
-              <input type="text" placeholder="Username" class="dashboard__input dashboard__recipient">
-              <input type="number" placeholder="Amount" class="dashboard__input dashboard__amount">
-              <span>&rarr;</span>
+                <div class="dashboard__input--container">
+                 <input type="text" placeholder="Username" class="dashboard__input--container dashboard__recipient">
+                 <input type="number" placeholder="Amount" class="dashboard__input--container dashboard__amount">
+                </div>
+                <span class="dashboard__transfer-arrow">&rarr;</span>
               </div>
             </form>
             <form action="" class="dashboard__add">
               <p class="dashboard__money-add">Add Money</p>
               <div class="dashboard__wrapper">
-              <input type="number" placeholder="Amount" class="dashboard__input-add dashboard__amount">
-              <input type="text" placeholder="Pin" class="dashboard__input-add dashboard__pin">
-              <span>&rarr;</span>
+                <div class="dashboard__input--wrapper">
+                  <input type="number" placeholder="Amount" class="dashboard__input--wrapper dashboard__amount">
+                  <input type="text" placeholder="Pin" class="dashboard__input--wrapper dashboard__pin">
+                </div>
+                <span class="dashboard__add-arrow">&rarr;</span>
               </div>
             </form>
           </div>
