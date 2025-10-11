@@ -1,68 +1,61 @@
+// --- Mock Database ---
+const users = [
+  { username: "Isaac", pin: "1234" },
+  { username: "Amina", pin: "5678" },
+];
 
-  // Mock "user database"
-  const users = [
-    { username: "Isaac", pin: "1234" },
-    { username: "Amina", pin: "5678" },
-  ];
+// --- Select elements using classes only ---
+const heroSection = document.querySelector(".hero");
+const dashboard = document.querySelector(".dashboard");
+const loginForm = document.querySelector(".hero__form");
+const loginInputs = document.querySelectorAll(".hero__input");
+const welcomeText = document.querySelector(".dashboard__welcome");
 
-  // Select elements
-  const loginForm = document.getElementById("loginForm");
-  const usernameInput = document.getElementById("username");
-  const pinInput = document.getElementById("pin");
-  const dashboard = document.querySelector(".dashboard");
-  const heroSection = document.querySelector(".hero");
-  const errorMessage = document.getElementById("errorMessage");
-  const welcomeMessage = document.querySelector(".dashboard__welcome");
-  const logoutBtn = document.getElementById("logoutBtn");
+// --- Hide dashboard on load ---
+dashboard.style.display = "none";
 
-  // Function to show dashboard
-  function showDashboard(username) {
+// --- Check if user already logged in ---
+const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
+if (loggedInUser) {
+  heroSection.style.display = "none";
+  dashboard.style.display = "block";
+  welcomeText.textContent = `Welcome ${loggedInUser.username}`;
+}
+
+// --- Listen for form submission ---
+loginForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const username = loginInputs[0].value.trim();
+  const pin = loginInputs[1].value.trim();
+
+  // Find matching user
+  const user = users.find((u) => u.username === username && u.pin === pin);
+
+  if (user) {
+    // Save user info in localStorage
+    localStorage.setItem("loggedInUser", JSON.stringify(user));
+
+    // Show dashboard
     heroSection.style.display = "none";
     dashboard.style.display = "block";
-    welcomeMessage.textContent = `Welcome ${username}`;
-    errorMessage.style.display = "none";
+    welcomeText.textContent = `Welcome ${user.username}`;
+  } else {
+    alert("Invalid username or PIN. Please try again.");
   }
 
-  // Function to show login form
-  function showLogin() {
-    heroSection.style.display = "block";
-    dashboard.style.display = "none";
-    errorMessage.style.display = "none";
-  }
+  // Clear inputs
+  loginInputs[0].value = "";
+  loginInputs[1].value = "";
+});
 
-  // Check if a user is already logged in
-  const savedUser = localStorage.getItem("loggedInUser");
-  if (savedUser) {
-    showDashboard(savedUser);
-  }
-
-  // Handle login
-  loginForm.addEventListener("submit", function (event) {
-    event.preventDefault();
-
-    const username = usernameInput.value.trim();
-    const pin = pinInput.value.trim();
-
-    // Validate user
-    const validUser = users.find(
-      (user) => user.username === username && user.pin === pin
-    );
-
-    if (validUser) {
-      // Save to localStorage
-      localStorage.setItem("loggedInUser", username);
-      showDashboard(username);
-    } else {
-      errorMessage.style.display = "block";
-    }
-
-    usernameInput.value = "";
-    pinInput.value = "";
-  });
-
-  // Handle logout
-  logoutBtn.addEventListener("click", function () {
+// --- Logout this is optional ---
+const closeAccountForm = document.querySelector(".dashboard__close");
+if (closeAccountForm) {
+  closeAccountForm.addEventListener("submit", (e) => {
+    e.preventDefault();
     localStorage.removeItem("loggedInUser");
-    showLogin();
+    dashboard.style.display = "none";
+    heroSection.style.display = "block";
   });
-
+}
