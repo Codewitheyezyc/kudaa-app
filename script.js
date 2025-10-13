@@ -1,38 +1,44 @@
 import accounts from "./data.js";
 
 // transaction function
-const makeTransaction = (allAccounts, userAccountNumber, receiverAccountNumber, transactiontype, amount) => {
-    if (allAccounts, userAccountNumber, receiverAccountNumber == 'null' && amount) {
-        // find user and receiver
+const makeTransaction = (allAccounts, userAccountNumber) => {
+    if (allAccounts, userAccountNumber) {
+
+        const transactionsDashboard = document.querySelector(".dashboard__transactions");
+        const H2 = document.createElement('h2')
+        const moneyMovements = document.createElement('div')
+ 
+        H2.className = 'transaction__title'
+        H2.innerText = 'Transactions'
+
+        moneyMovements.className = 'money__movements'
+
+        // find user
         const userAccount = allAccounts.find(acc => acc.accountNumber === userAccountNumber);
-        // calculate user balance
-        const userbalance = userAccount.moneyMovements.reduce((acc, mov) => acc + mov, 0);
-        console.log(userbalance);
-        // check transaction type. .eg ['withdraw', 'send', 'deposit']
-        if (transactiontype == 'withdraw') {
-            const newUserbalance = userbalance - amount
-            return newUserbalance
-        }else if (transactiontype == 'deposit'){
-            const newUserbalance = userbalance + amount
-            return newUserbalance
-        }
-    } else {
-        const userAccount = allAccounts.find(acc => acc.accountNumber === userAccountNumber);
-        const receiverAccount = allAccounts.find(acc => acc.accountNumber === receiverAccountNumber);
-        // calculate receiver balance
-        const userbalance = userAccount.moneyMovements.reduce((acc, mov) => acc + mov, 0);
-        const receiverbalance = receiverAccount.moneyMovements.reduce((acc, mov) => acc + mov, 0);
-        if (transactiontype == 'send' && receiverAccount != null){
-            const newreceiverbalance = receiverbalance + amount
-            const newUserbalance = userbalance - amount
-            return { 'sender': newUserbalance, 'receiver': newreceiverbalance }
-        }
+        const moneyMovementsList = userAccount.moneyMovements
+
+        moneyMovementsList.forEach(movement => {
+            const movementDiv = document.createElement('div')
+            const movementType =  document.createElement('div')
+            const movementAmount =  document.createElement('div')
+
+            movementDiv.className = 'movement__div'
+            movementType.className = 'movement__type'
+            movementAmount.className = 'movement__amount'
+            if (movement < 0) {
+                movementType.classList.add('withdraw')
+                movementType.innerText = 'Withdraw'
+                movementAmount.innerText = movement
+            } else {
+                movementType.classList.add('deposit')
+                movementType.innerText = 'Deposit'
+                movementAmount.innerText = movement
+            }
+            movementDiv.append(movementType, movementAmount)
+
+            moneyMovements.append(movementDiv)
+        });
+        transactionsDashboard.append(H2, moneyMovements)
     }
 }
-
-console.log(accounts);
-
-// console.log(makeTransaction(accounts, accounts[0].accountNumber, accounts[2].accountNumber, "send", 2000));
-// console.log(makeTransaction(accounts, accounts[0].accountNumber, 'null', "deposit", 5000));
-let x = makeTransaction(accounts, accounts[0].accountNumber, 'null', "deposit", 5000)
-console.log(x);
+makeTransaction(accounts, accounts[1].accountNumber)
