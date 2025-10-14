@@ -1,7 +1,8 @@
 // --- Mock Database ---
+import accounts from "./data.js";
 const users = [
-  { username: "Isaac", pin: "1234" },
-  { username: "Amina", pin: "5678" },
+    { username: "Isaac", pin: "1234" },
+    { username: "Amina", pin: "5678" },
 ];
 
 // --- Select elements using classes only ---
@@ -59,3 +60,12 @@ if (closeAccountForm) {
     heroSection.style.display = "block";
   });
 }
+
+
+
+// transaction function
+const Transaction = () => {
+    console.log("Transactions");
+    
+}
+Transaction()
