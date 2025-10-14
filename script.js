@@ -1,44 +1,61 @@
-import accounts from "./data.js";
+// --- Mock Database ---
+const users = [
+  { username: "Isaac", pin: "1234" },
+  { username: "Amina", pin: "5678" },
+];
 
-// transaction function
-const makeTransaction = (allAccounts, userAccountNumber) => {
-    if (allAccounts, userAccountNumber) {
+// --- Select elements using classes only ---
+const heroSection = document.querySelector(".hero");
+const dashboard = document.querySelector(".dashboard");
+const loginForm = document.querySelector(".hero__form");
+const loginInputs = document.querySelectorAll(".hero__input");
+const welcomeText = document.querySelector(".dashboard__welcome");
 
-        const transactionsDashboard = document.querySelector(".dashboard__transactions");
-        const H2 = document.createElement('h2')
-        const moneyMovements = document.createElement('div')
- 
-        H2.className = 'transaction__title'
-        H2.innerText = 'Transactions'
+// --- Hide dashboard on load ---
+dashboard.style.display = "none";
 
-        moneyMovements.className = 'money__movements'
-
-        // find user
-        const userAccount = allAccounts.find(acc => acc.accountNumber === userAccountNumber);
-        const moneyMovementsList = userAccount.moneyMovements
-
-        moneyMovementsList.forEach(movement => {
-            const movementDiv = document.createElement('div')
-            const movementType =  document.createElement('div')
-            const movementAmount =  document.createElement('div')
-
-            movementDiv.className = 'movement__div'
-            movementType.className = 'movement__type'
-            movementAmount.className = 'movement__amount'
-            if (movement < 0) {
-                movementType.classList.add('withdraw')
-                movementType.innerText = 'Withdraw'
-                movementAmount.innerText = movement
-            } else {
-                movementType.classList.add('deposit')
-                movementType.innerText = 'Deposit'
-                movementAmount.innerText = movement
-            }
-            movementDiv.append(movementType, movementAmount)
-
-            moneyMovements.append(movementDiv)
-        });
-        transactionsDashboard.append(H2, moneyMovements)
-    }
+// --- Check if user already logged in ---
+const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
+if (loggedInUser) {
+  heroSection.style.display = "none";
+  dashboard.style.display = "block";
+  welcomeText.textContent = `Welcome ${loggedInUser.username}`;
 }
-makeTransaction(accounts, accounts[1].accountNumber)
+
+// --- Listen for form submission ---
+loginForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const username = loginInputs[0].value.trim();
+  const pin = loginInputs[1].value.trim();
+
+  // Find matching user
+  const user = users.find((u) => u.username === username && u.pin === pin);
+
+  if (user) {
+    // Save user info in localStorage
+    localStorage.setItem("loggedInUser", JSON.stringify(user));
+
+    // Show dashboard
+    heroSection.style.display = "none";
+    dashboard.style.display = "block";
+    welcomeText.textContent = `Welcome ${user.username}`;
+  } else {
+    alert("Invalid username or PIN. Please try again.");
+  }
+
+  // Clear inputs
+  loginInputs[0].value = "";
+  loginInputs[1].value = "";
+});
+
+// --- Logout this is optional ---
+const closeAccountForm = document.querySelector(".dashboard__close");
+if (closeAccountForm) {
+  closeAccountForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    localStorage.removeItem("loggedInUser");
+    dashboard.style.display = "none";
+    heroSection.style.display = "block";
+  });
+}
