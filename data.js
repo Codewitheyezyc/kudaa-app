@@ -21,3 +21,4 @@ const accounts = [
     accountNumber: 2345123456,
   },
 ];
+export default accounts;
